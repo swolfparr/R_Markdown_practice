@@ -82,4 +82,3 @@ Adding comments you can also at add comments that do not show up on your HTML by
 manuscript reference
 
 [@aronson2000]
-
