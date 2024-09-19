@@ -1,0 +1,84 @@
+---
+# title: "Week_5_exercises_Data"
+# author: "Spencer Parr"
+# date: "2024-9-19"
+output: html_document
+bibliography: RMDpractice.bib
+params:
+  region: "Caribbean"
+---
+
+# *Week 5 R-Markdown Practice* {.tabset}
+
+<!--# Create a YAML Header, you can bold and change format in visual mode. click three buttons or use {.tabset} to create a tabset -->
+
+## Testing Math
+
+```{r}
+x<-2
+y<-5
+
+print(x+y)
+```
+
+``` {r}
+# Load necessary libraries
+library(ggplot2)
+library(plotly)
+
+# Create some fake data
+set.seed(123)
+fake_data <- data.frame(
+  Year = rep(2000:2020, each = 5),
+  Site = rep(letters[1:5], times = 21),
+  Sponge_Abundance = rnorm(105, mean = 50, sd = 10)
+)
+
+# Create a plot using ggplot
+p <- ggplot(fake_data, aes(x = Year, y = Sponge_Abundance, color = Site)) +
+  geom_line() +
+  labs(title = "Sponge Abundance Over Time",
+       x = "Year",
+       y = "Sponge Abundance") +
+  theme_minimal()
+
+# Convert ggplot to plotly for interactivity
+ggplotly(p)
+```
+
+## Graphs
+
+**Lets Try to put some graphs into this section**
+
+```{r}
+# Load necessary libraries
+library(ggplot2)
+
+# Create some fake data
+set.seed(123)
+fake_data <- data.frame(
+  Year = rep(2000:2020, each = 5),
+  Site = rep(letters[1:5], times = 21),
+  Sponge_Abundance = rnorm(105, mean = 50, sd = 10)
+)
+
+# Create a plot
+ggplot(fake_data, aes(x = Year, y = Sponge_Abundance, color = Site)) +
+  geom_line() +
+  labs(title = "Sponge Abundance Over Time",
+       x = "Year",
+       y = "Sponge Abundance") +
+  theme_minimal()
+```
+
+## Comments
+
+Adding comments you can also at add comments that do not show up on your HTML by pressing command+shift+C
+
+<!-- this is a practice -->
+
+## References
+
+manuscript reference
+
+[@aronson2000]
